@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>CivicEvents+</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/config.js"></script><script src="/js/utils.js"></script><script src="/js/ui.js"></script><script src="/js/auth.js"></script>
+<script>window.location.replace(Auth.getToken() ? Auth.homeFor(Auth.getUser()) : CONFIG.ROUTES.login);</script>
+</head><body></body></html>

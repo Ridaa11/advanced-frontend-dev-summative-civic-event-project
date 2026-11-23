@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/js/tailwind-config.js"></script>
+<style type="text/tailwindcss">
+  @layer components {
+    .field { @apply mt-1 block w-full rounded-md border border-slate-400 bg-white px-3 py-2.5 text-base text-ink placeholder:text-slate-500 focus:border-civic focus:outline-none focus:ring-2 focus:ring-civic aria-invalid:border-alert; }
+    .btn-primary { @apply w-full rounded-md bg-civic px-4 py-3 font-semibold text-white hover:bg-civic-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-civic focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60; }
+    .field-error { @apply mt-1 hidden text-sm text-alert; }
+    .toggle-btn { @apply absolute inset-y-0 right-0 px-3 text-sm font-medium text-civic hover:text-civic-dark focus:outline-none focus-visible:ring-2 focus-visible:ring-civic rounded-md; }
+  }
+</style>
+<title>Log in - CivicEvents+</title>
+</head>
+<body class="bg-paper font-sans text-ink">
+<div class="grid min-h-screen lg:grid-cols-2">
+  <aside class="hidden bg-civic-dark p-12 text-white lg:flex lg:flex-col lg:justify-between">
+    <p class="font-display text-2xl font-bold">CivicEvents+</p>
+    <div class="max-w-md border-l-4 border-signal pl-6">
+      <h2 class="font-display text-4xl font-bold leading-tight">Everything happening in your community, in one place.</h2>
+      <p class="mt-4 text-lg text-civic-light">Find local events, listen to announcements and watch the latest promos.</p>
+    </div>
+    <p class="text-sm text-civic-light">Open to every resident.</p>
+  </aside>
+  <main class="flex items-center justify-center px-6 py-12">
+    <div class="w-full max-w-sm">
+      <p class="font-display text-2xl font-bold text-civic lg:hidden">CivicEvents+</p>
+      <h1 class="mt-6 font-display text-3xl font-bold lg:mt-0">Log in</h1>
+      <p class="mt-2 text-slate-700">Welcome back. Enter your details to continue.</p>
+
+      <form id="login-form" class="mt-8 space-y-5" novalidate>
+        <p id="form-error" role="alert" class="hidden rounded-md border border-alert bg-red-50 px-3 py-2 text-sm text-alert"></p>
+
+        <div>
+          <label for="email" class="block text-sm font-medium">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required class="field" aria-describedby="email-error">
+          <p id="email-error" class="field-error"></p>
+        </div>
+
+        <div>
+          <label for="password" class="block text-sm font-medium">Password</label>
+          <div class="relative">
+            <input id="password" name="password" type="password" autocomplete="current-password" required class="field pr-16" aria-describedby="password-error">
+            <button type="button" class="toggle-btn" data-toggle-password="#password" aria-label="Show password" aria-pressed="false">Show</button>
+          </div>
+          <p id="password-error" class="field-error"></p>
+        </div>
+
+        <label class="flex items-center gap-2 text-sm">
+          <input id="remember" type="checkbox" class="h-4 w-4 rounded border-slate-400 text-civic focus:ring-civic">
+          Keep me logged in on this device
+        </label>
+
+        <button type="submit" class="btn-primary">Log in</button>
+      </form>
+
+      <p class="mt-6 text-sm text-slate-700">New here? <a href="/signup.html" class="font-semibold text-civic underline hover:text-civic-dark">Create an account</a></p>
+    </div>
+  </main>
+</div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/config.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/pages/login.js"></script>
+</body>
+</html>
