@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="/js/tailwind-config.js"></script>
+<style type="text/tailwindcss">
+  @layer components {
+    .field { @apply mt-1 block w-full rounded-md border border-slate-400 bg-white px-3 py-2.5 text-base text-ink placeholder:text-slate-500 focus:border-civic focus:outline-none focus:ring-2 focus:ring-civic aria-invalid:border-alert; }
+    .field-error { @apply mt-1 hidden text-sm text-alert; }
+    .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-civic focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60; }
+    .btn-solid { @apply bg-civic text-white hover:bg-civic-dark; }
+    .btn-outline { @apply border border-civic bg-white text-civic hover:bg-civic-light; }
+    .btn-danger { @apply bg-alert text-white hover:bg-red-800; }
+    .card { @apply rounded-lg border border-slate-200 bg-white shadow-sm; }
+    .badge { @apply inline-block rounded-full px-2.5 py-0.5 text-xs font-semibold; }
+    .nav-link { @apply rounded-md px-2 py-1 text-sm font-medium text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-signal; }
+    .menu-item { @apply block w-full px-4 py-2 text-left text-sm text-ink hover:bg-civic-light focus:bg-civic-light focus:outline-none; }
+    .skeleton { @apply animate-pulse rounded bg-slate-200; }
+  }
+</style>
+<title>Dashboard - CivicEvents+</title>
+</head>
+<body class="flex min-h-screen flex-col bg-paper font-sans text-ink">
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-50 focus:rounded focus:bg-white focus:px-3 focus:py-2">Skip to main content</a>
+<header id="site-header"></header>
+<div class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 lg:flex lg:gap-8">
+<aside id="admin-sidebar" class="lg:w-56 lg:shrink-0"></aside>
+<main id="main" class="min-w-0 flex-1" tabindex="-1">
+<div class="flex flex-wrap items-end justify-between gap-4"><div><h1 class="font-display text-3xl font-bold">Dashboard</h1><p id="updated" class="mt-1 text-sm text-slate-700" aria-live="polite"></p></div><button type="button" id="refresh" class="btn btn-outline">Refresh</button></div><div id="dashboard" class="mt-6"></div>
+</main>
+</div>
+<footer id="site-footer"></footer>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="/js/config.js"></script>
+<script src="/js/utils.js"></script>
+<script src="/js/ui.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/pages/dashboard.js"></script>
+</body>
+</html>
