@@ -11,4 +11,4 @@ A civic events platform: a Node.js + PostgreSQL API (backend/) and an HTML, Tail
 Admin and user guards are marked with `ROLE GUARD` comments in frontend/js (auth.js, layout.js and each page script) and listed in a table in frontend/README.md. The backend enforces the real permissions.
 
 ## Demo video
-(add your link here)
+'https://youtu.be/3mfw_e0za1s?si=9KBQTbKjZwX_dbmT'
